@@ -1,0 +1,97 @@
+#Voting System using OOP
+#Password :- Ranak5
+
+print("1:Caste Vote for 'Karan' ")
+print("2:Caste Vote for 'Arjun' ")
+print("3:Caste Vote for 'Bhisma' ")
+print("4:Caste Vote for 'Dronacharya' ")
+print("5:End Polling and Show Results")
+
+num1 = 0
+num2 = 0
+num3 = 0
+num4 = 0
+
+class vote:
+
+    @staticmethod
+    def Karan():
+        global num1
+        num1 += 1
+
+    @staticmethod
+    def Arjun():
+        global num2
+        num2 += 1
+
+    @staticmethod
+    def Bhisma():
+        global num3
+        num3 += 1
+
+    @staticmethod
+    def Dronacharya():
+        global num4
+        num4 += 1
+    
+    def Results(self):
+        global num1
+        global num2
+        global num3
+        global num4
+        dict = {
+            "Karan" : num1,
+            "Arjun" : num2,
+            "Bhisma" : num3,
+            "Dronacharya" : num4
+            }
+        print("Voting Result")
+        for _ in dict:
+            print(f"{_} : {dict[_]} votes")
+       
+        winner = max(dict.values())
+        for name in dict:
+            if dict[name] == winner:#checks key and returns value 
+                print(f"Winner : {name}")
+            
+    
+v = vote()
+run = True
+class pas:
+    def password(self):
+        while run:
+            no = int(input("Caste Your Vote : "))
+
+            if no == 1:
+                v.Karan()
+                print("Vote Casted to Karan")
+                
+            if no == 2:
+                v.Arjun()
+                print("Vote Casted to Arjun")
+                
+            if no == 3:
+                v.Bhisma()
+                print("Vote Casted to Bhisma")
+                
+            if no == 4:
+                v.Dronacharya()
+                print("Vote Casted to Dronacharya")
+                
+            if no == 5:
+                print("Polling ended")
+                v.Results()
+                break
+                
+p = pas()
+
+password = input("Enter Password : ")
+print(f"Password is {password}")
+
+if password == "Ranak5":
+    p.password()
+else:
+    print("Invalid Password Voting System Failed")
+
+#password :- Ranak5
+
